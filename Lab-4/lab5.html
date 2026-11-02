@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страхування житла</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-purple: #4a0e4e;
+            --accent-pink: #ffc0cb;
+            --light-pink: #fff0f3;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #fdfdfd;
+        }
+
+        .bg-variant-purple {
+            background-color: var(--primary-purple) !important;
+            color: #ffffff;
+        }
+
+        .bg-variant-pink {
+            background-color: var(--accent-pink) !important;
+        }
+
+        .bg-variant-light {
+            background-color: var(--light-pink);
+        }
+
+        .btn-variant {
+            background-color: var(--primary-purple);
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-variant:hover {
+            background-color: #330937;
+            color: #ffffff;
+        }
+
+        .card-custom {
+            border: 1px solid var(--accent-pink);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Додаткові стилі для Лабораторної №5 (Завдання 1) */
+        .custom-site-title {
+            font-family: 'Georgia', serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .company-logo {
+            width: 42px;
+            height: 42px;
+            background-color: var(--accent-pink);
+            color: var(--primary-purple);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 0 8px rgba(255, 192, 203, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ШАПКА САЙТУ З ЛОГОТИПОМ ТА ВЛАСНИМ СТИЛЕМ (Лабораторна №5, Завдання 1) -->
+    <header class="navbar navbar-expand-lg bg-variant-purple navbar-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
+                <span class="company-logo">🏡</span>
+                <span class="custom-site-title">SafeHome Insurance</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">Головна</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tariffs">Тарифи</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#advantages">Переваги</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works">Як це працює</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Відгуки</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="tel:+380001234567" class="btn btn-outline-light btn-sm">📞 0-800-123-456</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. ГОЛОВНИЙ БЛОК З ГРАФІЧНИМ КОНТЕНТОМ (Лабораторна №5, Завдання 2) -->
+    <section id="hero" class="py-5 bg-variant-light border-bottom">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <h1 class="display-5 fw-bold text-uppercase" style="color: var(--primary-purple);">
+                        Захистіть свою домівку від будь-яких ризиків
+                    </h1>
+                    <p class="lead text-muted my-3">
+                        Надійний захист квартири чи будинку від пожежі, затоплення, шахедів, ракет, стихійних лих та дій третіх осіб. Оформлення онлайн за 5 хвилин.
+                    </p>
+                    
+                    <!-- Розширений графічний контент зі стилізацією Bootstrap (img-fluid, rounded, shadow) -->
+                    <div class="row g-2 mt-1">
+                        <div class="col-md-8">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" 
+                                 alt="Страхування житла" class="img-fluid rounded-3 shadow border">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" 
+                                 alt="Затишна квартира" class="img-fluid rounded-3 shadow border">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card shadow-lg border-0 rounded-4">
+                        <div class="card-body p-4">
+                            <h4 class="card-title fw-bold text-center mb-3" style="color: var(--primary-purple);">
+                                📝 Розрахувати вартість
+                            </h4>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-semibold">Тип нерухомості</label>
+                                    <select class="form-select">
+                                        <option selected>Квартира</option>
+                                        <option>Приватний будинок</option>
+                                        <option>Дача / Таунхаус</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-semibold">Площа (м²)</label>
+                                    <input type="number" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-semibold">Ваше ім'я та прізвище</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-semibold">Номер телефону</label>
+                                    <input type="tel" class="form-control" placeholder="+380 (__) ___-__-__">
+                                </div>
+                                <button type="submit" class="btn btn-variant w-100 py-2 rounded-3">
+                                    Отримати пропозицію
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4 bg-variant-pink text-center">
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col-md-8">
+                    <h5 class="fw-bold mb-1" style="color: var(--primary-purple);">
+                        🔥 Акція! Знижка -25% на річний поліс страхування майна
+                    </h5>
+                    <p class="mb-0 small text-dark">Пропозиція дійсна до кінця поточного місяця при оформленні на сайті.</p>
+                </div>
+                <div class="col-md-3">
+                    <a href="#hero" class="btn btn-dark btn-sm fw-bold px-4">Оформити зі знижкою</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. БЛОК №5: ТАБЛИЦЯ ТАРИФІВ ТА ПОКРИТТЯ (Лабораторна №5, Завдання 3 — Варіант 7) -->
+    <section id="tariffs" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-2" style="color: var(--primary-purple);">
+                📊 Тарифні пакети страхування майна
+            </h2>
+            <p class="text-center text-muted mb-4">Деталі страхового покриття та вартість (8 програм, 6 характеристик)</p>
+
+            <!-- Стилізація таблиці за Варіантом 7: .table-striped, .table-hover, .table-sm, .table-responsive-md -->
+            <div class="table-responsive-md">
+                <table class="table table-striped table-hover table-sm border align-middle">
+                    <thead class="table-dark text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Пакет страхування</th>
+                            <th>Ремонт та оздоблення</th>
+                            <th>Рухоме майно</th>
+                            <th>Відповідальність перед сусідами</th>
+                            <th>Річна вартість</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Стилізація рядків та комірок згідно з Варіантом 7 -->
+                        <tr class="table-primary fw-bold">
+                            <td class="text-center">1</td>
+                            <td>Базовий Старт</td>
+                            <td>100 000 грн</td>
+                            <td>50 000 грн</td>
+                            <td>50 000 грн</td>
+                            <td>1 200 грн/рік</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">2</td>
+                            <td>Стандарт Квартира</td>
+                            <td>250 000 грн</td>
+                            <td>100 000 грн</td>
+                            <td>100 000 грн</td>
+                            <td>2 100 грн/рік</td>
+                        </tr>
+                        <tr class="table-active">
+                            <td class="text-center">3</td>
+                            <td>Оптимальний Захист</td>
+                            <td>400 000 грн</td>
+                            <td>200 000 грн</td>
+                            <td>150 000 грн</td>
+                            <td>3 200 грн/рік</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">4</td>
+                            <td>Комфорт Плюс</td>
+                            <td>600 000 грн</td>
+                            <td class="table-warning">300 000 грн (Акція)</td>
+                            <td>200 000 грн</td>
+                            <td class="table-info">4 100 грн/рік</td>
+                        </tr>
+                        <tr class="table-success fw-bold">
+                            <td class="text-center">5</td>
+                            <td>Преміум Дім (Хіт)</td>
+                            <td>1 000 000 грн</td>
+                            <td>500 000 грн</td>
+                            <td>300 000 грн</td>
+                            <td>5 500 грн/рік</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">6</td>
+                            <td>Таунхаус Захист</td>
+                            <td>800 000 грн</td>
+                            <td>350 000 грн</td>
+                            <td>250 000 грн</td>
+                            <td>4 800 грн/рік</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">7</td>
+                            <td>Заміська Садиба</td>
+                            <td>1 500 000 грн</td>
+                            <td>800 000 грн</td>
+                            <td>500 000 грн</td>
+                            <td class="table-warning">7 900 грн/рік</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">8</td>
+                            <td>All Inclusive Max</td>
+                            <td>2 500 000 грн</td>
+                            <td>1 200 000 грн</td>
+                            <td>1 000 000 грн</td>
+                            <td>11 000 грн/рік</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ПЕРЕВАГИ (Advantages Grid) -->
+    <section id="advantages" class="py-5 bg-variant-light">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4" style="color: var(--primary-purple);">Чому обирають SafeHome?</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 p-3 shadow-sm rounded-3">
+                        <div class="fs-1 mb-2">⚡</div>
+                        <h5 class="fw-bold">Швидка виплата</h5>
+                        <p class="text-muted small">Компенсація збитків протягом 3-х робочих днів без зайвої бюрократії.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 p-3 shadow-sm rounded-3">
+                        <div class="fs-1 mb-2">🛡️</div>
+                        <h5 class="fw-bold">Повний захист</h5>
+                        <p class="text-muted small">Покриваємо пожежі, затоплення сусідів, стихійні лиха, наслідки війни та пограбування.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-custom h-100 p-3 shadow-sm rounded-3">
+                        <div class="fs-1 mb-2">📲</div>
+                        <h5 class="fw-bold">100% Онлайн</h5>
+                        <p class="text-muted small">Без візитів у офіс та огляду майна для договорів до 500 000 грн.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5" style="color: var(--primary-purple);">Як отримати поліс за 3 кроки</h2>
+            
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-3 bg-white rounded-3 shadow-sm border">
+                        <span class="badge bg-variant-purple fs-5 mb-3">Крок 1</span>
+                        <h5>Заповніть форму</h5>
+                        <p class="text-muted small mb-0">Вкажіть параметри вашого житла та контактні дані.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-white rounded-3 shadow-sm border">
+                        <span class="badge bg-variant-purple fs-5 mb-3">Крок 2</span>
+                        <h5>Оплата онлайн</h5>
+                        <p class="text-muted small mb-0">Оплатіть розраховану вартість будь-якою банківською карткою.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-white rounded-3 shadow-sm border">
+                        <span class="badge bg-variant-purple fs-5 mb-3">Крок 3</span>
+                        <h5>Отримайте поліс</h5>
+                        <p class="text-muted small mb-0">Електронний поліс одразу надійде на ваш e-mail </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. БЛОК №9: ВІДГУКІ КЛІЄНТІВ ІЗ ФОТОГРАФІЯМИ (Лабораторна №5, Завдання 4 — Варіант 7: .rounded, .rounded-circle) -->
+    <section id="reviews" class="py-5 bg-variant-light border-top">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4" style="color: var(--primary-purple);">Відгуки наших відомих клієнтів</h2>
+            <div class="row g-4">
+                <!-- Клієнт 1 з оформленням фото .rounded-circle -->
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded-3 shadow-sm border border-pink text-center h-100">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                             alt="Олена, м. Київ" class="rounded-circle img-thumbnail mb-3" width="90" height="90">
+                        <p class="fst-italic text-muted">«Оформила поліс онлайн, прямо з телефону за 5 хвилин. Все зручно, зрозуміло та за вигідною ціною.»</p>
+                        <h6 class="fw-bold mb-0" style="color: var(--primary-purple);">— Олена, м. Київ</h6>
+                    </div>
+                </div>
+                <!-- Клієнт 2 з оформленням фото .rounded -->
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded-3 shadow-sm border border-pink text-center h-100">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+                             alt="Олексій, м. Львів" class="rounded img-thumbnail mb-3" width="90" height="90">
+                        <p class="fst-italic text-muted">«Сусіди зверху затопили мені ванну кімнату. Страхова виплатила компенсацію за 2 дні без затримок. Вдячний за оперативність!»</p>
+                        <h6 class="fw-bold mb-0" style="color: var(--primary-purple);">— Олексій, м. Львів</h6>
+                    </div>
+                </div>
+                <!-- Клієнт 3 з оформленням фото .rounded-circle -->
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded-3 shadow-sm border border-pink text-center h-100">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" 
+                             alt="Ірина, м. Дніпро" class="rounded-circle img-thumbnail mb-3" width="90" height="90">
+                        <p class="fst-italic text-muted">«Рекомендую всім знайомим розширити страхове покриття на майно. Виплатили збитки чітко та вчасно.»</p>
+                        <h6 class="fw-bold mb-0" style="color: var(--primary-purple);">— Ірина, м. Дніпро</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-variant-purple text-white border-top">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-start mb-2 mb-md-0">
+                    <h5>🏡 SafeHome Insurance</h5>
+                    <p class="small text-white-50 mb-0">Лабораторна робота №4-№5 | Варіант 7 </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="small text-white-50 mb-0">© 2026 Всі права захищені. НЛТУ України.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
